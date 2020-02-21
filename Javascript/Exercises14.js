@@ -1,16 +1,19 @@
 function changeVocals (str) {
     //code di sini
     var kamus = ['a','b','e','f','i','j','o','p','u','v','A','B','E','F','I','J','O','P','U','V']
-    var hapus = 'aeiou'
     var temp = ''
-    var hasil= ''
+    var check
     for(var i = 0; i < str.length; i++){
+        check = false
         for(var j = 0; j < kamus.length; j = j + 2){
             if(str[i] == kamus[j]){
+                check = true
                 temp += kamus[j+1]
             }
         }
-        temp += str[i]
+        if(check == false){
+            temp += str[i]
+        }
     }
 
     return temp
